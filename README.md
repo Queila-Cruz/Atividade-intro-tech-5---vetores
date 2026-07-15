@@ -44,4 +44,53 @@ programa
 
 Atividade 2 – Operações com Vetores
 
-Neste outro exercício foi desenvolvido algoritmo no Portugol para ler 10 números inteiros e coloca-los dentro de um vetor. Ao depurar o programa imprimi os elementos localizados em números pares do vetor, calcula a soma de todos os números e a média , aplicando os conceitos de vetores, estruturas condicionais e laços de repetição como é solicitado na atividade.
+Neste outro exercício foi desenvolvido um algoritmo no Portugol para ler 10 números inteiros e coloca-los dentro de um vetor. Ao depurar o programa imprimi os elementos localizados em números pares do vetor, calcula a soma de todos os números e a média , aplicando os conceitos de vetores, estruturas condicionais e laços de repetição como é solicitado na atividade.
+
+
+programa
+{
+    funcao inicio()
+    {
+        inteiro vetor[10]
+        inteiro i, soma = 0
+        real media
+
+        // input dos dados
+        para(i = 0; i < 10; i++)
+        {
+            escreva("Digite o ", i + 1, "º número: ")
+            leia(vetor[i])
+            limpa()
+        }
+
+        // Elementos ímpares
+        escreva("\nElementos ímpares:\n")
+        para(i = 1; i < 10; i = i + 2)
+        {
+            escreva(vetor[i], " ")
+        }
+
+        // Elementos pares
+        escreva("\n\nElementos pares:\n")
+        para(i = 0; i < 10; i++)
+        {
+            se(vetor[i] % 2 == 0)
+            {
+                escreva(vetor[i], " ")
+            }
+        }
+
+        // Soma dos elementos
+        para(i = 0; i < 10; i++)
+        {
+            soma = soma + vetor[i]
+        }
+
+        escreva("\n\nSoma:\n", soma)
+
+        // Média
+        media = soma / 10.0
+
+        escreva("\n\nMédia:\n", media)
+    }
+}
